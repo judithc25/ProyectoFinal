@@ -17,7 +17,7 @@
       <v-col md="4" class="columna2">
         <v-text-field class="renglon" label="Departamanet Id" outlined />
         <v-text-field class="renglon1" label="Location" outlined />
-        <v-text-field type="datetime-local" class="renglon2" label="Open Time" outlined />
+        <v-text-field type="time" class="renglon2" label="Open Time" outlined />
       </v-col>
       <v-col md="2">
         <v-btn class="boton2">

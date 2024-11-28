@@ -15,21 +15,16 @@
         </v-btn>
       </v-col>
       <v-col md="1">
-        <v-btn class="botonmas">
+        <v-btn class="bg-surface-variant rounded-circle mx-auto" style="height: 50px; width: 40px; background: linear-gradient(-90deg,#7f7694, #8e81cc);">
           +
         </v-btn>
       </v-col>
     </v-row>
     <v-row class="texto2">
       <v-col md="6">
-        <v-text-field label="Medicine Name" outlined />
-        <v-text-field type="date" label="Expire Date" outlined />
-        <v-text-field label="QTY" outlined />
-      </v-col>
-      <v-col md="4" class="columna2">
-        <v-text-field class="renglon" label="Medicine Id" outlined />
-        <v-text-field class="renglon1" label="Supplier Name" outlined />
-        <v-text-field type="date" class="renglon2" label="Manufectare Date" outlined />
+        <h3>Assign Lab For Patient</h3>
+        <v-text-field class="renglonsup" label="Lab" outlined />
+        <v-text-field type="date" label="Date" outlined />
         <v-text-field
           label="Unit Price"
           outlined
@@ -42,6 +37,11 @@
             </div>
           </template>
         </v-text-field>
+      </v-col>
+      <v-col md="4" class="columna2">
+        <v-text-field class="renglon" label="Lab Id" outlined />
+        <v-text-field class="renglon1" label="Patient Name" outlined />
+        <v-text-field type="time" class="renglon2" label="Time" outlined />
       </v-col>
       <v-col md="2">
         <v-btn class="boton2">
@@ -60,7 +60,7 @@
     </v-row>
     <v-row class="texto3">
       <h3 class="titulo">
-        Out of Stock
+        Recent Assingn Lab For Patient
       </h3>
       <p class="parrafo">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, culpa.
@@ -69,24 +69,22 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Medicine Name</th>
-            <th>Expire Date</th>
-            <th>Manufacture Date</th>
-            <th>Supplier Name</th>
-            <th>Unit Price</th>
-            <th>QTY</th>
+            <th>Lab</th>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Price</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
             <td>{{ item.id }}</td>
-            <td>{{ item.medicine }}</td>
-            <td>{{ item.expire }}</td>
-            <td>{{ item.manufacture }}</td>
-            <td>{{ item.supplier }}</td>
+            <td>{{ item.lab }}</td>
+            <td>{{ item.patient }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.time }}</td>
             <td>{{ item.price }}</td>
-            <td>{{ item.qty }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>
@@ -109,6 +107,9 @@ export default {
 </script>
 
 <style scoped>
+.renglonsup {
+  margin-top: 20%;
+}
 .parrafo {
   margin-top: 6%;
 }
@@ -145,10 +146,6 @@ export default {
   background: linear-gradient(-90deg, #e9eb26,#faf53b);
   border-radius: 10px;
   margin-top: 25%;
-}
-.v-btn.botonmas {
-  background: linear-gradient(-90deg,#7f7694, #8e81cc);
-  border-radius: 50%;
 }
 .columna2 {
   margin-top: 3%;

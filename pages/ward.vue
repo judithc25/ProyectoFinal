@@ -28,7 +28,7 @@
       <v-col md="4" class="columna2">
         <v-text-field class="renglon" label="Ward Id" outlined />
         <v-text-field class="renglon1" label="Number assing doctors" outlined />
-        <v-text-field type="date" class="renglon2" label="Number of patients" outlined />
+        <v-text-field class="renglon2" label="Number of patients" outlined />
       </v-col>
       <v-col md="2">
         <v-btn class="boton2">
@@ -89,7 +89,7 @@
 
 <script>
 export default {
-  name: 'InspirePage'
+  name: 'WardPage'
 }
 </script>
 
