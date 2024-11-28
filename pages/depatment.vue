@@ -55,12 +55,12 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.location }}</td>
-            <td>{{ item.date }}</td>
-            <td>{{ item.time }}</td>
-            <td>{{ item.number }}</td>
+            <td>{{ item.departamentid }}</td>
+            <td>{{ item.dName }}</td>
+            <td>{{ item.dlocation }}</td>
+            <td>{{ item.dopenDate }}</td>
+            <td>{{ item.dopenTime }}</td>
+            <td>{{ item.dcontactNumber }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>

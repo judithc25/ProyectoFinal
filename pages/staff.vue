@@ -11,7 +11,6 @@
           Generate Report
         </v-btn>
         <v-text-field label="First Name" outlined />
-        <v-text-field label="Role" outlined />
         <v-text-field label="Email" outlined />
         <v-text-field label="Address" outlined />
         <v-text-field label="NIC" outlined />
@@ -52,7 +51,6 @@
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Rol</th>
             <th>Gender</th>
             <th>Email</th>
             <th>Mobile Number</th>
@@ -63,14 +61,13 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.rol }}</td>
-            <td>{{ item.gender }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.mobile }}</td>
-            <td>{{ item.nic }}</td>
-            <td>{{ item.dob }}</td>
+            <td>{{ item.doctorid }}</td>
+            <td>{{ item.dname }}</td>
+            <td>{{ item.dgendero }}</td>
+            <td>{{ item.demail }}</td>
+            <td>{{ item.dtelefono }}</td>
+            <td>{{ item.dNIC }}</td>
+            <td>{{ item.ddob }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-list-status</v-icon>

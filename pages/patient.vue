@@ -63,15 +63,15 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.Fname }}</td>
-            <td>{{ item.Lname }}</td>
-            <td>{{ item.nic }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.number }}</td>
-            <td>{{ item.dob }}</td>
-            <td>{{ item.gender }}</td>
-            <td>{{ item.address }}</td>
+            <td>{{ item.patientid }}</td>
+            <td>{{ item.pnombre }}</td>
+            <td>{{ item.plastname }}</td>
+            <td>{{ item.pNIC }}</td>
+            <td>{{ item.pemail }}</td>
+            <td>{{ item.ptelefono }}</td>
+            <td>{{ item.pdob }}</td>
+            <td>{{ item.pgenero }}</td>
+            <td>{{ item.pdireccion }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>

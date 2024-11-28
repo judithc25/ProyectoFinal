@@ -68,12 +68,12 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.medicine }}</td>
-            <td>{{ item.expire }}</td>
-            <td>{{ item.manufacture }}</td>
+            <td>{{ item.medicineID }}</td>
+            <td>{{ item.mnombre }}</td>
+            <td>{{ item.expireDate }}</td>
+            <td>{{ item.manuDate }}</td>
             <td>{{ item.supplier }}</td>
-            <td>{{ item.price }}</td>
+            <td>{{ item.unitPrice }}</td>
             <td>{{ item.qty }}</td>
             <td>
               <v-btn icon small>
