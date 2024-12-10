@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
     <v-navigation-drawer
+      v-if="isAuthenticated"
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -27,6 +28,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
+      v-if="isAuthenticated"
       :clipped-left="clipped"
       fixed
       app
@@ -42,22 +44,45 @@
       </v-btn>
       <v-toolbar-title class="title" v-text="title" />
       <v-spacer />
-      <v-btn icon>
-        <v-icon>mdi-account-injury</v-icon>
+      <v-btn icon @click="logout">
+        <v-icon>mdi-logout</v-icon>
       </v-btn>
-      <span>Prasad</span>
+      <span>{{ userName }}</span>
     </v-app-bar>
     <v-main>
       <v-container>
-        <Nuxt />
+        <template v-if="isAuthenticated">
+          <Nuxt />
+        </template>
+        <template v-else>
+          <v-tabs v-model="tab">
+            <v-tab>Login</v-tab>
+            <v-tab>Sign Up</v-tab>
+          </v-tabs>
+          <v-tabs-items v-model="tab">
+            <v-tab-item>
+              <LoginForm @login="handleLogin" />
+            </v-tab-item>
+            <v-tab-item>
+              <SignupForm @signup="handleSignup" />
+            </v-tab-item>
+          </v-tabs-items>
+        </template>
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import LoginForm from '~/components/LoginForm.vue'
+import SignupForm from '~/components/SignupForm.vue'
+
 export default {
   name: 'DefaultLayout',
+  components: {
+    LoginForm,
+    SignupForm
+  },
   data () {
     return {
       clipped: false,
@@ -133,7 +158,28 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Medicorazon'
+      title: 'Medicorazon',
+      isAuthenticated: false,
+      userName: '',
+      tab: null
+    }
+  },
+  methods: {
+    handleLogin (credentials) {
+      // Implement your login logic here
+      // For demonstration, we'll just set isAuthenticated to true
+      this.isAuthenticated = true
+      this.userName = credentials.email
+    },
+    handleSignup (userData) {
+      // Implement your signup logic here
+      // For demonstration, we'll just set isAuthenticated to true
+      this.isAuthenticated = true
+      this.userName = userData.name
+    },
+    logout () {
+      this.isAuthenticated = false
+      this.userName = ''
     }
   }
 }
